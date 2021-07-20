@@ -1,0 +1,7 @@
+FROM ubuntu
+LABEL maintainer="bouss58@hotmail.com"
+RUN apt-get update
+RUN apt-get install -y nginx
+EXPOSE 85
+ADD static-website-example/ /var/www/html/
+ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
